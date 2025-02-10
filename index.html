@@ -1,0 +1,263 @@
+<!DOCTYPE html><html lang="en"><head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta property="og:title" content="i love you vivi">
+  <meta property="og:description" content="please come home to me">
+  <meta property="og:image" content="images/IMG_4975.jpg">
+  <meta property="og:url" content="https://ilovemyexcomeho.me">
+  <meta property="og:type" content="website">
+  <title>My Love Vivi ❤️</title>
+  <style>
+    body {
+      font-family: 'Arial', sans-serif;
+      background: #f5f5f5;
+      margin: 0;
+      padding: 0;
+      overflow: hidden;
+      cursor: none;
+    }
+
+    /* Custom cursor */
+    .custom-cursor {
+      position: fixed;
+      width: 32px; 
+      height: 32px;
+      background: url('images/cursor.png') no-repeat center center;
+      background-size: cover;
+      pointer-events: none; 
+      z-index: 9999;
+    }
+
+    .wall {
+      position: relative;
+      width: 100vw;
+      height: 100vh;
+      background: #fff5e6;
+      overflow: hidden;
+      filter: blur(0);
+      transition: filter 0.3s ease;
+    }
+
+    .wall.blur {
+      filter: blur(5px);
+    }
+
+    .wall-title {
+      position: absolute;
+      top: 20px;
+      left: 50%;
+      transform: translateX(-50%);
+      font-family: 'Press Start 2P', cursive;
+      font-size: 24px;
+      color: #5a3e36;
+      text-align: center;
+      z-index: 1;
+    }
+
+    .sticky-note {
+      position: absolute;
+      width: 180px;
+      height: 180px;
+      background: #ffff88;
+      border-radius: 2px;
+      box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.2);
+      cursor: none;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+      overflow: hidden;
+      transform: rotate(5deg);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .sticky-note:nth-child(odd) {
+      transform: rotate(-3deg);
+    }
+
+    .sticky-note:nth-child(3n) {
+      transform: rotate(7deg);
+    }
+
+    .sticky-note:hover {
+      transform: scale(1.05) rotate(0deg);
+      box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.3);
+    }
+
+    .sticky-note img {
+      width: 90%;
+      height: 90%;
+      object-fit: cover;
+      border-radius: 5px;
+    }
+
+    .sticky-note .tape {
+      position: absolute;
+      top: -8px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 45px;
+      height: 40px;
+      background: rgba(255, 182, 193, 0.7);
+      clip-path: path("M 22,5 A 10,10 0 0,1 42,15 Q 42,35 22,45 Q 2,35 2,15 A 10,10 0 0,1 22,5 Z");
+    }
+
+    .note-overlay {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.5);
+      z-index: 2;
+    }
+
+    .note-overlay.show {
+      display: block;
+    }
+
+    .note-content {
+      display: none;
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 400px;
+      height: 300px;
+      background: #ffff88;
+      border-radius: 5px;
+      box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.3);
+      padding: 20px;
+      box-sizing: border-box;
+      font-size: 16px;
+      color: #5a3e36;
+      text-align: center;
+      z-index: 3;
+    }
+
+    .note-content.show {
+      display: block;
+    }
+
+    .note-content .close-btn {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      font-size: 20px;
+      cursor: none;
+      color: #5a3e36;
+    }
+
+    .note-content p {
+      margin: 0;
+      margin-top: 20px;
+    }
+
+    .intro-screen {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(255, 245, 230, 0.9);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-family: 'Press Start 2P', cursive;
+      font-size: 24px;
+      color: #5a3e36;
+      text-align: center;
+      cursor: none;
+      z-index: 4;
+    }
+
+    .intro-screen.hide {
+      display: none;
+    }
+  </style>
+</head>
+<body>
+  <div class="custom-cursor"></div>
+
+  <div class="intro-screen">
+    Press to Enter
+  </div>
+
+  <div class="wall blur">
+    <div class="wall-title">storm x vivi ❤️<br><small>Click the notes to view</small></div>
+
+    <div class="sticky-note" style="top: 20%; left: 15%;" data-note="i wish i couldve told you this sooner but i cant live without you, i love you so much❤️">
+      <div class="tape"></div>
+      <img src="images/pic1.png" alt="My Love">
+    </div>
+
+    <div class="sticky-note" style="top: 30%; left: 50%;" data-note="ive tried so hard to see other people so i could try move on from you but i always ended up thinking about you no matter what happened because i knew you were so much better than anyone ive ever talked to 💕">
+      <div class="tape"></div>
+      <img src="images/pic2.png" alt="My Love">
+    </div>
+
+    <div class="sticky-note" style="top: 60%; left: 30%;" data-note="you really are so special to me and i want you to know that">
+      <div class="tape"></div>
+      <img src="images/pic3.png" alt="My Love">
+    </div>
+
+    <div class="sticky-note" style="top: 50%; left: 70%;" data-note="i love you so much and i always will and i miss you so much ill do anything for us to be together again">
+      <div class="tape"></div>
+      <img src="images/pic4.png" alt="My Love">
+    </div>
+  </div>
+
+  <div class="note-overlay"></div>
+  <div class="note-content">
+    <span class="close-btn">X</span>
+    <p id="note-text"></p>
+  </div>
+
+  <audio id="background-music" src="media/song.mp3" loop=""></audio>
+
+  <script>
+    const customCursor = document.querySelector('.custom-cursor');
+
+    document.addEventListener('mousemove', (e) => {
+      customCursor.style.left = `${e.clientX}px`;
+      customCursor.style.top = `${e.clientY}px`;
+    });
+
+    const introScreen = document.querySelector('.intro-screen');
+    const wall = document.querySelector('.wall');
+    const noteOverlay = document.querySelector('.note-overlay');
+    const noteContent = document.querySelector('.note-content');
+    const noteText = document.getElementById('note-text');
+    const closeBtn = document.querySelector('.close-btn');
+    const audio = document.getElementById('background-music');
+
+    introScreen.addEventListener('click', () => {
+      introScreen.classList.add('hide');
+      wall.classList.remove('blur');
+      audio.play();
+    });
+
+    document.querySelectorAll('.sticky-note').forEach(note => {
+      note.addEventListener('click', () => {
+        noteText.textContent = note.getAttribute('data-note');
+        noteOverlay.classList.add('show');
+        noteContent.classList.add('show');
+        wall.classList.add('blur');
+      });
+    });
+
+    closeBtn.addEventListener('click', () => {
+      noteOverlay.classList.remove('show');
+      noteContent.classList.remove('show');
+      wall.classList.remove('blur');
+    });
+
+    noteOverlay.addEventListener('click', () => {
+      noteOverlay.classList.remove('show');
+      noteContent.classList.remove('show');
+      wall.classList.remove('blur');
+    });
+  </script>
+<script defer="" src="https://static.cloudflareinsights.com/beacon.min.js/vcd15cbe7772f49c399c6a5babf22c1241717689176015" data-cf-beacon="{" rayid":"90fad054fb3866fc","version":"2025.1.0","r":1,"token":"8525d66b34a8429083402f025683ae78","servertiming":{"name":{"cfextpri":true,"cfl4":true,"cfspeedbrain":true,"cfcachestatus":true}}}"="" crossorigin="anonymous"></script>
+
+</body></html>
